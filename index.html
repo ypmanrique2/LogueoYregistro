@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es-419">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+</head>
+
+<body>
+    <main class="container">
+        <img width="50"
+            src="https://img.freepik.com/vector-gratis/vector-degradado-logotipo-colorido-pajaro_343694-1365.jpg"
+            alt="">
+        <h1>Formularios</h1>
+
+        <h3>Ingresar</h3>
+        <form id="loginForm">
+            <label for="usuarioLogin">Usuario:</label>
+            <input type="text" id="usuarioLogin" name="usuario">
+            <br>
+            <label for="claveLogin">Contraseña:</label>
+            <input type="password" id="claveLogin" name="clave">
+            <br>
+            <input type="submit" value="Login">
+        </form>
+
+        <h3>Registrar</h3>
+        <form id="registerForm">
+            <label for="usuarioRegister">Usuario:</label>
+            <input type="text" id="usuarioRegister" name="usuario">
+            <br>
+            <label for="claveRegister">Contraseña:</label>
+            <input type="password" id="claveRegister" name="clave">
+            <br>
+            <input type="submit" value="Registrar">
+        </form>
+    </main>
+
+    <script>
+        // Manejo del formulario de login
+        document.getElementById('loginForm').addEventListener('submit', async function (event) {
+            event.preventDefault();
+            const usuario = document.getElementById('usuarioLogin').value;
+            const clave = document.getElementById('claveLogin').value;
+
+            try {
+                const response = await fetch(`http://localhost:3000/login?usuario=${encodeURIComponent(usuario)}&clave=${encodeURIComponent(clave)}`, {
+                    method: 'GET',
+                });
+
+                if (response.ok) {
+                    alert('Login exitoso');
+                } else {
+                    alert('Error de login');
+                }
+            } catch (error) {
+                console.error("Error en la solicitud:", error);
+                alert('No se pudo conectar al servidor');
+            }
+        });
+
+        // Manejo del formulario de registro
+        document.getElementById('registerForm').addEventListener('submit', async function (event) {
+            event.preventDefault();
+            const usuario = document.getElementById('usuarioRegister').value;
+            const clave = document.getElementById('claveRegister').value;
+
+            const response = await fetch('http://localhost:3000/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ usuario, clave })
+            });
+
+            if (response.ok) {
+                alert('Usuario registrado');
+            } else {
+                const errorMessage = await response.text();
+                alert('Error: ' + errorMessage);
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<data grt_format="2.0">
+  <value _ptr_="000001D279F9B8C0" type="list" content-type="object" content-struct-name="db.mgmt.Connection">
+    <value type="object" struct-name="db.mgmt.Connection" id="{34F95094-0A86-483F-AB0D-298BAAEB5B33}" struct-checksum="0x96ba47d8">
+      <link type="object" struct-name="db.mgmt.Driver" key="driver">com.mysql.rdbms.mysql.driver.native</link>
+      <value type="string" key="hostIdentifier">Mysql@mysql-conversor-soy-7596.i.aivencloud.com:12655</value>
+      <value type="int" key="isDefault">1</value>
+      <value _ptr_="000001D27AE57030" type="dict" key="modules"/>
+      <value _ptr_="000001D27AE563D0" type="dict" key="parameterValues">
+        <value type="string" key="DbSqlEditor:LastDefaultSchema">defaultdb</value>
+        <value type="string" key="SQL_MODE"></value>
+        <value type="string" key="hostName">mysql-conversor-soy-7596.i.aivencloud.com</value>
+        <value type="int" key="lastConnected">1735155663</value>
+        <value type="string" key="password"></value>
+        <value type="int" key="port">12655</value>
+        <value type="string" key="schema"></value>
+        <value type="string" key="serverVersion">8.0.30</value>
+        <value type="string" key="sslCA"></value>
+        <value type="string" key="sslCert"></value>
+        <value type="string" key="sslCipher"></value>
+        <value type="string" key="sslKey"></value>
+        <value type="int" key="useSSL">1</value>
+        <value type="string" key="userName">avnadmin</value>
+      </value>
+      <value type="string" key="name">ConversorAudioTexto-TextoAudio</value>
+      <link type="object" struct-name="GrtObject" key="owner">{61DB21F3-574D-49F1-9907-565A7C5EB73F}</link>
+    </value>
+  </value>
+</data>

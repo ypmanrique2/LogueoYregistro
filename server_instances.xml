@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<data grt_format="2.0">
+  <value _ptr_="000001D279F9AE40" type="list" content-type="object" content-struct-name="db.mgmt.ServerInstance">
+    <value type="object" struct-name="db.mgmt.ServerInstance" id="{807A4FEA-4E4E-4998-86F4-4BC86F792096}" struct-checksum="0x367436e2">
+      <link type="object" struct-name="db.mgmt.Connection" key="connection">{34F95094-0A86-483F-AB0D-298BAAEB5B33}</link>
+      <value _ptr_="000001D27AE56790" type="dict" key="loginInfo"/>
+      <value _ptr_="000001D27AE568B0" type="dict" key="serverInfo">
+        <value type="int" key="setupPending">1</value>
+      </value>
+      <value type="string" key="name">ConversorAudioTexto-TextoAudio</value>
+    </value>
+  </value>
+</data>
